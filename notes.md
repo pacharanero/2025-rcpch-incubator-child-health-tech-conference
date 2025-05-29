@@ -7,8 +7,4 @@ We exist to help create affordable and effective technology solutions to real wo
 
 Need > Idea > Funding > Design > Build > Test > Launch > Improve
 
-2020 Digital Growth Charts API
-2022 Epilepsy12 - Audit Platform
-2023 National Paediatric Diabetes Audit - Audit Platform
-2025 LivingLens - Deprivation and Social Determinants of Health App
-2025 NeoMate - Neonatal Resuscitation Calculator App
+
