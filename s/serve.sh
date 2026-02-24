@@ -1,6 +1,7 @@
-#!/bin/sh
+#!/bin/zsh
 # Script to serve the presentation locally using live-server
 
+# Check if live-server is installed
 type live-server >/dev/null 2>&1 || {
   echo "live-server is not installed. Installing globally with npm..."
   npm install -g live-server || { echo "npm install failed"; exit 1; }

@@ -1,0 +1,51 @@
+/* Base retro effect */
+.reveal {
+    filter: saturate(0.7) brightness(1.1) contrast(1.1) blur(0.5px);
+}
+
+/* Dirty Projector */
+.reveal-viewport::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='projectorNoise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='5' seed='1' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='linear' slope='2'/%3E%3CfeFuncG type='linear' slope='2'/%3E%3CfeFuncB type='linear' slope='2'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23projectorNoise)'/%3E%3C/svg%3E");
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 1;
+    mix-blend-mode: overlay;
+}
+
+/* Dirty/grainy slide */
+.slides section > * {
+    position: relative;
+}
+
+.slides section > *::after {
+    content: '';
+    position: absolute;
+    inset: -20px;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='slideNoise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='6' seed='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='linear' slope='2.5'/%3E%3CfeFuncG type='linear' slope='2.5'/%3E%3CfeFuncB type='linear' slope='2.5'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23slideNoise)'/%3E%3C/svg%3E");
+    background-size: 150px;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 2;
+    mix-blend-mode: overlay;
+}
+
+/* Commented out additional effects for now
+/*
+.reveal::before {
+    ... grain effect ...
+}
+
+.reveal::after {
+    ... dust effect ...
+}
+
+@keyframes wobble {
+    ... wobble animation ...
+}
+*/
